@@ -3,15 +3,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public interface Generate13 {
-	void SentenceGenerator();
+	String[] SentenceGenerator();
 }
 
 class Randomly implements Generate13{
-	public String[] vocabulary1 = {};
+	public String[] vocabulary1 = new String[20];
 	int n;
 	int index;
 	@Override
-	public void SentenceGenerator() {
+	public String[] SentenceGenerator() {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		n = scanner.nextInt();
@@ -23,14 +23,15 @@ class Randomly implements Generate13{
 		Random random = new Random();
 		index = random.nextInt(vocabulary1.length);
 		System.out.println(vocabulary1[index].toLowerCase());
+		return vocabulary1;
 	}
 }
 
 class Sortedly implements Generate13{
-	public String[] vocabulary2 = {};
+	public String[] vocabulary2 = new String[20];
 	int n;
 	@Override
-	public void SentenceGenerator() {
+	public String[] SentenceGenerator() {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		n = scanner.nextInt();
@@ -48,16 +49,17 @@ class Sortedly implements Generate13{
 				}
 			}
 		}
-		System.out.println(vocabulary2); 
+		//System.out.println(vocabulary2);
+		return vocabulary2;
 	}
 	
 }
 
 class Orderedly implements Generate13{
-	public String[] vocabulary3 = {};
+	public String[] vocabulary3 = new String[20];
 	int n;
 	@Override
-	public void SentenceGenerator() {
+	public String[] SentenceGenerator() {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		n = scanner.nextInt();
@@ -69,7 +71,8 @@ class Orderedly implements Generate13{
 		for (int i = 0; i < vocabulary3.length; i++) {
 			System.out.println(vocabulary3[i]);
 		}
-		System.out.println(vocabulary3);
+		//System.out.println(vocabulary3);
+		return vocabulary3;
 	}
 	
 }
